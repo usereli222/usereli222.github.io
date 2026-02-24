@@ -3,58 +3,162 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Emily Ran Li | Portfolio</title>
+    <title>Emily Ran Li | Solarpunk Cottage</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&family=VT323&family=Press+Start+2P&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header>
-        <nav>
-            <ul>
-                <li><a href="#about">About</a></li>
-                <li><a href="#experience">Experience</a></li>
-                <li><a href="#projects">Projects</a></li>
-            </ul>
-        </nav>
-        <div class="hero">
-            <h1>Hi, I'm Emily! ✨</h1>
-            <p>Computer Science @ Purdue University</p>
+    <!-- Immersive Background -->
+    <div class="world-bg"></div>
+    <div class="ambient-dust" id="ambientDust"></div>
+    
+    <!-- HUD / Navigation -->
+    <nav class="hud-nav">
+        <div class="system-status">
+            <div class="status-light"></div>
+            <span class="status-text">GARDEN.SYS // E.LI</span>
+            <div class="level-badge">LVL 21</div>
         </div>
-    </header>
+        <ul class="nav-nodes">
+            <li><a href="#about" class="mech-button"><div class="btn-icon bio-icon"></div> Journal</a></li>
+            <li><a href="#experience" class="mech-button"><div class="btn-icon gear-icon"></div> Quests</a></li>
+            <li><a href="#projects" class="mech-button"><div class="btn-icon core-icon"></div> Crafts</a></li>
+        </ul>
+    </nav>
 
-    <main>
-        <section id="about" class="card">
-            <h2>About Me 🌸</h2>
-            <p>I'm a CS student passionate about information architecture and bridging the gap between complex data and human understanding through data storytelling.</p>
-            <p>When I'm not coding or studying algorithms, you can usually find me playing the violin, training for my next 5K, hunting for thrift store treasures, or hanging out with my cat, Blue Jay! 🐈</p>
-        </section>
-
-        <section id="experience" class="card">
-            <h2>Experience 💼</h2>
-            <ul>
-                <li><strong>Public Relations Lead</strong> - Hack The Future</li>
-                <li><strong>Undergraduate Course Developer & TA</strong> - Programming in C (CS 240)</li>
-                <li><strong>Professional & Technical Development Mentor</strong> - Launchpad</li>
-            </ul>
-        </section>
-
-        <section id="projects" class="card">
-            <h2>Projects & Research 🚀</h2>
-            <div class="project-grid">
-                <div class="project-item">
-                    <h3>AI for Musicians</h3>
-                    <p>Undergraduate research exploring the intersection of machine intelligence and music.</p>
+    <main class="environment-container">
+        <header class="hero-terminal glass-panel">
+            <div class="terminal-header">
+                <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+                <span class="title">GREENHOUSE_TERMINAL</span>
+                <div class="xp-bar-container">
+                    <span class="xp-text">XP</span>
+                    <div class="xp-bar"><div class="xp-fill"></div></div>
                 </div>
-                <div class="project-item">
-                    <h3>StudyDuck</h3>
-                    <p>A productivity mobile app built to help students stay on track.</p>
+            </div>
+            <div class="terminal-content">
+                <div class="avatar-container">
+                    <div class="avatar-ring"></div>
+                    <div class="avatar-core"></div>
+                </div>
+                <div class="hero-text">
+                    <h1>Hi, I'm Emily!</h1>
+                    <p class="subtitle">Class: Botanist / Coder @ Purdue University</p>
+                    <div class="power-line">
+                        <div class="power-flow"></div>
+                    </div>
+                    <p class="tagline">Growing sustainable code for a greener tomorrow.</p>
+                    <div class="stats-grid">
+                        <div class="stat-box">
+                            <span class="stat-label">INT</span>
+                            <span class="stat-value">94</span>
+                        </div>
+                        <div class="stat-box">
+                            <span class="stat-label">AGI</span>
+                            <span class="stat-value">88</span>
+                        </div>
+                        <div class="stat-box">
+                            <span class="stat-label">ECO</span>
+                            <span class="stat-value">99</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <section id="about" class="glass-panel content-module">
+            <div class="module-connector top"></div>
+            <h2 class="brass-heading"><div class="heading-icon leaf-icon"></div> Adventurer's Log</h2>
+            <div class="module-inner">
+                <p>I'm a CS student passionate about information architecture and bridging the gap between complex data and human understanding through data storytelling.</p>
+                <p>When I'm not coding or studying algorithms, you can usually find me playing the violin, training for my next 5K, hunting for thrift store treasures, or hanging out with my cat, Pipi!</p>
+                
+                <div class="inventory-slots">
+                    <div class="inv-slot tooltip" data-tip="Violin (Equipped)"><div class="item-icon violin"></div></div>
+                    <div class="inv-slot tooltip" data-tip="Running Shoes (+10 SPD)"><div class="item-icon shoes"></div></div>
+                    <div class="inv-slot tooltip" data-tip="Thrifted Artifact"><div class="item-icon artifact"></div></div>
+                    <div class="inv-slot tooltip" data-tip="Familiar: Pipi"><div class="item-icon cat"></div></div>
+                </div>
+            </div>
+            <div class="module-connector bottom"></div>
+        </section>
+
+        <section id="experience" class="glass-panel content-module">
+            <div class="module-connector top"></div>
+            <h2 class="brass-heading"><div class="heading-icon quest-icon"></div> Quest Log</h2>
+            <div class="module-inner">
+                <ul class="data-list quest-list">
+                    <li class="quest-item completed">
+                        <div class="quest-status"></div>
+                        <div class="quest-content">
+                            <strong>Public Relations Lead</strong> 
+                            <span class="highlight">// Hack The Future</span>
+                            <div class="quest-rewards">Rewards: +500 XP, +10 CHA</div>
+                        </div>
+                    </li>
+                    <li class="quest-item completed">
+                        <div class="quest-status"></div>
+                        <div class="quest-content">
+                            <strong>Software Engineering Intern</strong> 
+                            <span class="highlight">// Tech Corp</span>
+                            <div class="quest-rewards">Rewards: +1000 XP, +15 INT</div>
+                        </div>
+                    </li>
+                    <li class="quest-item active">
+                        <div class="quest-status"></div>
+                        <div class="quest-content">
+                            <strong>Current Objective: Graduate</strong> 
+                            <span class="highlight">// Purdue University</span>
+                            <div class="quest-rewards">Rewards: B.S. Computer Science, +9999 XP</div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="module-connector bottom"></div>
+        </section>
+
+        <section id="projects" class="glass-panel content-module">
+            <div class="module-connector top"></div>
+            <h2 class="brass-heading"><div class="heading-icon craft-icon"></div> Crafted Items</h2>
+            <div class="module-inner project-grid">
+                <div class="project-capsule">
+                    <div class="capsule-glass">
+                        <div class="project-header">
+                            <h3>Eco-Tracker</h3>
+                            <span class="rank-badge">Rank A</span>
+                        </div>
+                        <p>A web app that helps users track their daily carbon footprint and suggests sustainable alternatives.</p>
+                        <div class="tech-stack">
+                            <span class="tech-pill">React</span>
+                            <span class="tech-pill">Node.js</span>
+                        </div>
+                        <div class="energy-meter"><div class="fill" style="width: 85%"></div></div>
+                    </div>
+                </div>
+                <div class="project-capsule">
+                    <div class="capsule-glass">
+                        <div class="project-header">
+                            <h3>Data Storyteller</h3>
+                            <span class="rank-badge">Rank S</span>
+                        </div>
+                        <p>An interactive visualization tool that turns complex datasets into easy-to-understand narratives.</p>
+                        <div class="tech-stack">
+                            <span class="tech-pill">D3.js</span>
+                            <span class="tech-pill">Python</span>
+                        </div>
+                        <div class="energy-meter"><div class="fill" style="width: 95%"></div></div>
+                    </div>
                 </div>
             </div>
         </section>
     </main>
 
-    <footer>
-        <p>Made with 💖 and lots of coffee by Emily Ran Li</p>
+    <footer class="hud-footer">
+        <div class="footer-line"></div>
+        <p>Crafted with <span style="color: var(--energy);">♥</span> by Emily Li</p>
+        <p class="footer-small">SYSTEM.HALT // END_OF_FILE</p>
     </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
