@@ -299,10 +299,16 @@ body {
     left: 10px;
     width: 100px;
     height: 100px;
-    background: url('data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22%252388a550%22%3E%3Cpath%20d%3D%22M12%2C22A10%2C10%200%200%2C1%202%2C12A10%2C10%200%200%2C1%2012%2C2A10%2C10%200%200%2C1%2022%2C12A10%2C10%200%200%2C1%2012%2C22M12%2C4A8%2C8%200%200%2C0%204%2C12A8%2C8%200%200%2C0%2012%2C20A8%2C8%200%200%2C0%2020%2C12A8%2C8%200%200%2C0%2012%2C4M11%2C15.59V17H13V15.59C14.72%2C15.1%2016%2C13.7%2016%2C12A4%2C4%200%200%2C0%2012%2C8A4%2C4%200%200%2C0%208%2C12C8%2C13.7%209.28%2C15.1%2011%2C15.59M12%2C10A2%2C2%200%200%2C1%2014%2C12A2%2C2%200%200%2C1%2012%2C14A2%2C2%200%200%2C1%2010%2C12A2%2C2%200%200%2C1%2012%2C10Z%22/%3E%3C/svg%3E') center/cover;
     border-radius: 50%;
     background-color: var(--glass-bg);
     border: 2px solid var(--energy-dark);
+    object-fit: cover;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.avatar-core:hover {
+    transform: scale(1.05);
 }
 
 @keyframes spin { 100% { transform: rotate(360deg); } }

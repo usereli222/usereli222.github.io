@@ -59,4 +59,25 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
+
+    // Profile Picture Cycler
+    const profilePic = document.getElementById('profile-pic');
+    if (profilePic) {
+        // Add your own photo filenames here! Make sure they are in the 'images' folder.
+        const photos = [
+            //'images/hannahnme.jpeg',
+            //'images/hehe.jpeg',
+            //'images/meInNature.jpeg',
+            'images/menpipi.jpeg',
+            'images/smile.jpeg',
+            'images/wideeyedpipi.jpeg'
+        ];
+        
+        let currentPhotoIndex = 0;
+        
+        profilePic.addEventListener('click', () => {
+            currentPhotoIndex = (currentPhotoIndex + 1) % photos.length;
+            profilePic.src = photos[currentPhotoIndex];
+        });
+    }
 });
