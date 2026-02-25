@@ -7,9 +7,9 @@ function createSpore() {
     spore.classList.add('spore');
     
     // Randomize size, position, and animation duration
-    const size = Math.random() * 3 + 2; // Slightly smaller for fireflies
+    const size = Math.random() * 5 + 4; // Larger neon fireflies
     const left = Math.random() * 100;
-    const duration = Math.random() * 15 + 15; // Slower, lazier movement
+    const duration = Math.random() * 10 + 10; // Slightly faster movement
     const delay = Math.random() * 5;
 
     spore.style.width = `${size}px`;
@@ -27,8 +27,10 @@ function createSpore() {
 }
 
 // Initialize fireflies
-setInterval(createSpore, 400);
-for(let i=0; i<15; i++) createSpore(); // Initial burst
+document.addEventListener('DOMContentLoaded', () => {
+    setInterval(createSpore, 400);
+    for(let i=0; i<15; i++) createSpore(); // Initial burst
+});
 
 // Parallax Background Effect
 document.addEventListener('mousemove', (e) => {
@@ -76,8 +78,34 @@ document.addEventListener('DOMContentLoaded', () => {
         let currentPhotoIndex = 0;
         
         profilePic.addEventListener('click', () => {
+            // Hide the click hint on first click
+            const clickHint = document.getElementById('click-hint');
+            if (clickHint) {
+                clickHint.style.display = 'none';
+            }
+
             currentPhotoIndex = (currentPhotoIndex + 1) % photos.length;
             profilePic.src = photos[currentPhotoIndex];
+        });
+    }
+
+    // Night Mode Toggle
+    const themeToggle = document.getElementById('theme-toggle');
+    const themeIcon = document.getElementById('theme-icon');
+    
+    if (themeToggle && themeIcon) {
+        themeToggle.addEventListener('click', () => {
+            document.body.classList.toggle('night-mode');
+            
+            if (document.body.classList.contains('night-mode')) {
+                themeIcon.classList.remove('moon-icon');
+                themeIcon.classList.add('sun-icon');
+                themeToggle.setAttribute('aria-label', 'Toggle Light Mode');
+            } else {
+                themeIcon.classList.remove('sun-icon');
+                themeIcon.classList.add('moon-icon');
+                themeToggle.setAttribute('aria-label', 'Toggle Night Mode');
+            }
         });
     }
 });

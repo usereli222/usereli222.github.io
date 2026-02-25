@@ -10,7 +10,7 @@
 <body>
     <!-- Immersive Background -->
     <div class="world-bg"></div>
-    <div class="ambient-dust" id="ambientDust"></div>
+    <div class="ambient-dust" id="ambient-dust"></div>
     
     <!-- HUD / Navigation -->
     <nav class="hud-nav">
@@ -18,6 +18,9 @@
             <div class="status-light"></div>
             <span class="status-text">GARDEN.SYS // E.LI</span>
             <div class="level-badge">LVL 21</div>
+            <button id="theme-toggle" class="mech-button" aria-label="Toggle Night Mode" style="margin-left: 15px; padding: 5px 10px; display: flex; align-items: center; justify-content: center;">
+                <div class="btn-icon moon-icon" id="theme-icon"></div>
+            </button>
         </div>
         <ul class="nav-nodes">
             <li><a href="#about" class="mech-button"><div class="btn-icon bio-icon"></div> Journal</a></li>
@@ -40,26 +43,27 @@
                 <div class="avatar-container">
                     <div class="avatar-ring"></div>
                     <img src="images/profile1.jpeg" alt="Profile" class="avatar-core" id="profile-pic" onerror="if(this.src !== 'data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22%252388a550%22%3E%3Cpath%20d%3D%22M12%2C22A10%2C10%200%200%2C1%202%2C12A10%2C10%200%200%2C1%2012%2C2A10%2C10%200%200%2C1%2022%2C12A10%2C10%200%200%2C1%2012%2C22M12%2C4A8%2C8%200%200%2C0%204%2C12A8%2C8%200%200%2C0%2012%2C20A8%2C8%200%200%2C0%2020%2C12A8%2C8%200%200%2C0%2012%2C4M11%2C15.59V17H13V15.59C14.72%2C15.1%2016%2C13.7%2016%2C12A4%2C4%200%200%2C0%2012%2C8A4%2C4%200%200%2C0%208%2C12C8%2C13.7%209.28%2C15.1%2011%2C15.59M12%2C10A2%2C2%200%200%2C1%2014%2C12A2%2C2%200%200%2C1%2012%2C14A2%2C2%200%200%2C1%2010%2C12A2%2C2%200%200%2C1%2012%2C10Z%22/%3E%3C/svg%3E') this.src='data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22%252388a550%22%3E%3Cpath%20d%3D%22M12%2C22A10%2C10%200%200%2C1%202%2C12A10%2C10%200%200%2C1%2012%2C2A10%2C10%200%200%2C1%2022%2C12A10%2C10%200%200%2C1%2012%2C22M12%2C4A8%2C8%200%200%2C0%204%2C12A8%2C8%200%200%2C0%2012%2C20A8%2C8%200%200%2C0%2020%2C12A8%2C8%200%200%2C0%2012%2C4M11%2C15.59V17H13V15.59C14.72%2C15.1%2016%2C13.7%2016%2C12A4%2C4%200%200%2C0%2012%2C8A4%2C4%200%200%2C0%208%2C12C8%2C13.7%209.28%2C15.1%2011%2C15.59M12%2C10A2%2C2%200%200%2C1%2014%2C12A2%2C2%200%200%2C1%2012%2C14A2%2C2%200%200%2C1%2010%2C12A2%2C2%200%200%2C1%2012%2C10Z%22/%3E%3C/svg%3E';">
+                    <div class="click-me-hint" id="click-hint">Click me!</div>
                 </div>
                 <div class="hero-text">
                     <h1>Hi, I'm Emily!</h1>
-                    <p class="subtitle">Class: Botanist / Coder @ Purdue University</p>
+                    <p class="subtitle">Computer Science @ Purdue University</p>
                     <div class="power-line">
                         <div class="power-flow"></div>
                     </div>
-                    <p class="tagline">Growing sustainable code for a greener tomorrow.</p>
+                    <p class="tagline">Feel free to reach out!.</p>
                     <div class="stats-grid">
                         <div class="stat-box">
-                            <span class="stat-label">INT</span>
-                            <span class="stat-value">94</span>
+                            <span class="stat-label">GPA</span>
+                            <span class="stat-value">3.86</span>
                         </div>
                         <div class="stat-box">
-                            <span class="stat-label">AGI</span>
-                            <span class="stat-value">88</span>
+                            <span class="stat-label">CORE</span>
+                            <span class="stat-value" style="font-size: 0.8rem; text-align: center;">Discrete Math, Linear Algebra, OOP, C, Architecture, DSA, Competitive Prog, Stats</span>
                         </div>
                         <div class="stat-box">
-                            <span class="stat-label">ECO</span>
-                            <span class="stat-value">99</span>
+                            <span class="stat-label">ONGOING</span>
+                            <span class="stat-value" style="font-size: 0.8rem; text-align: center;">Systems Prog, Algorithms, Software Eng I</span>
                         </div>
                     </div>
                 </div>
@@ -70,7 +74,6 @@
             <div class="module-connector top"></div>
             <h2 class="brass-heading"><div class="heading-icon leaf-icon"></div> Adventurer's Log</h2>
             <div class="module-inner">
-                <p>I'm a CS student passionate about information architecture and bridging the gap between complex data and human understanding through data storytelling.</p>
                 <p>When I'm not coding or studying algorithms, you can usually find me playing the violin, training for my next 5K, hunting for thrift store treasures, or hanging out with my cat, Pipi!</p>
                 
                 <div class="inventory-slots">
@@ -99,9 +102,41 @@
                     <li class="quest-item completed">
                         <div class="quest-status"></div>
                         <div class="quest-content">
-                            <strong>Software Engineering Intern</strong> 
-                            <span class="highlight">// Tech Corp</span>
-                            <div class="quest-rewards">Rewards: +1000 XP, +15 INT</div>
+                            <strong>Launchpad</strong> 
+                            <span class="highlight">// Professional & Technical Development Mentor </span>
+                            <div class="quest-rewards">Rewards: +500 XP, +15 INT</div>
+                        </div>
+                    </li>
+                    <li class="quest-item completed">
+                        <div class="quest-status"></div>
+                        <div class="quest-content">
+                            <strong>Purdue Northwest Center for Innovation through Visualization and Simulation</strong> 
+                            <span class="highlight">// Research Intern </span>
+                            <div class="quest-rewards">Rewards: +500 XP, +15 INT</div>
+                        </div>
+                    </li>
+                    <li class="quest-item completed">
+                        <div class="quest-status"></div>
+                        <div class="quest-content">
+                            <strong>Skyline Cabinetry</strong> 
+                            <span class="highlight">// Technical Services Intern </span>
+                            <div class="quest-rewards">Rewards: +500 XP, +15 INT</div>
+                        </div>
+                    </li>
+                    <li class="quest-item active">
+                        <div class="quest-status"></div>
+                        <div class="quest-content">
+                            <strong>Current Objective: AI4Musicians Research </strong> 
+                            <span class="highlight">// Purdue University</span>
+                            <div class="quest-rewards">Rewards: </div>
+                        </div>
+                    </li>
+                    <li class="quest-item active">
+                        <div class="quest-status"></div>
+                        <div class="quest-content">
+                            <strong>Current Objective: CS240 Programming in C Course Development </strong> 
+                            <span class="highlight">// Purdue University</span>
+                            <div class="quest-rewards">Rewards: </div>
                         </div>
                     </li>
                     <li class="quest-item active">
@@ -124,29 +159,47 @@
                 <div class="project-capsule">
                     <div class="capsule-glass">
                         <div class="project-header">
-                            <h3>Eco-Tracker</h3>
+                            <h3>StudyDuck</h3>
                             <span class="rank-badge">Rank A</span>
                         </div>
-                        <p>A web app that helps users track their daily carbon footprint and suggests sustainable alternatives.</p>
+                        <p>A mobile app that creates a study schedule for you!</p>
                         <div class="tech-stack">
-                            <span class="tech-pill">React</span>
-                            <span class="tech-pill">Node.js</span>
+                            <span class="tech-pill">Swift</span>
+                            <span class="tech-pill">Xcode</span>
+                            <span class="tech-pill">Figma</span>
                         </div>
-                        <div class="energy-meter"><div class="fill" style="width: 85%"></div></div>
+                        <div class="energy-meter"><div class="fill" style="width: 100%"></div></div>
                     </div>
                 </div>
                 <div class="project-capsule">
                     <div class="capsule-glass">
                         <div class="project-header">
-                            <h3>Data Storyteller</h3>
+                            <h3>ArcelorMittal Steel Casting Simulation</h3>
                             <span class="rank-badge">Rank S</span>
                         </div>
-                        <p>An interactive visualization tool that turns complex datasets into easy-to-understand narratives.</p>
+                        <p>An interactive visualization tool that turns steel casting simulation data into a 3D visualization.</p>
                         <div class="tech-stack">
-                            <span class="tech-pill">D3.js</span>
+                            <span class="tech-pill">Unity</span>
+                            <span class="tech-pill">C#</span>
                             <span class="tech-pill">Python</span>
                         </div>
-                        <div class="energy-meter"><div class="fill" style="width: 95%"></div></div>
+                        <div class="energy-meter"><div class="fill" style="width: 100%"></div></div>
+                    </div>
+                </div>
+                <div class="project-capsule">
+                    <div class="capsule-glass">
+                        <div class="project-header">
+                            <h3>VR Futures Training Environments</h3>
+                            <span class="rank-badge">Rank S</span>
+                        </div>
+                        <p>An immersive virtual reality training environment to help adolescents overcome social anxiety.</p>
+                        <div class="tech-stack">
+                            <span class="tech-pill">Unity</span>
+                            <span class="tech-pill">iClone</span>
+                            <span class="tech-pill">Mixamo</span>
+                            <span class="tech-pill">Audio2Face</span>
+                        </div>
+                        <div class="energy-meter"><div class="fill" style="width: 100%"></div></div>
                     </div>
                 </div>
             </div>
